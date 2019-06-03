@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1 class="ml-5 murav">Муравьи:</h1>
+        <h1 class="points ml-5">0</h1>
+    <script type="text/javascript">
+      let points = 0;
+      let juk = 0;
+      let timer = function(){
+         let math = Math.random()*1300;
+         let math2 = Math.random()*500;
+         let lol = Math.round(math);
+         let lol2 = Math.round(math2);
+         let elem = document.createElement("img");
+         document.body.appendChild(elem);
+          elem.style.width='200px';
+          elem.style.height='200px';
+          elem.src = "img.svg";
+          elem.style.position = "absolute";
+          elem.style.marginLeft = lol+"px"
+          elem.style.marginTop = lol2+"px"
+          juk = juk + 1
+          document.querySelector(".murav").innerHTML = juk;
+          elem.onclick = function(){
+            elem.style.display = "none"
+            points = points + 1
+            document.querySelector(".points").innerHTML = points;
+        }
+      }
+      setInterval(timer,1000)
+    </script>
+  </body>
+</html>
